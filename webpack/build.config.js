@@ -20,7 +20,7 @@ const WebpackConfig = {
 
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: '[name].js'
+    filename: '[name].[hash].js'
   },
 
   externals: {
@@ -95,7 +95,7 @@ const WebpackConfig = {
     ], {
       ignore: ['*.js', '*.html', '*.md']
     }),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[hash].css'),
     new ZipWebpackPlugin({
       path: path.join(__dirname, '../'),
       filename: `plugin.zip`
